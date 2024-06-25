@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>OTP Email</title>
+    <style>
+        /* Inline CSS styles */
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .otp-code {
+            background-color: #6db33f;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .resend-btn {
+            background-color: #6db33f;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .resend-btn:hover {
+            background-color: #5ca82d;
+        }
+
+        .note {
+            color: #6b7280;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="https://download.logo.wine/logo/Spring_Framework/Spring_Framework-Logo.wine.png" alt="logo" class="logo"/>
+    <h1>OTP Email</h1>
+    <p>Your One-Time Password (OTP) is:</p>
+    <div class="otp-code" th:text="${otp}">123456</div>
+    <button class="resend-btn">Resend OTP</button>
+    <p class="note">Don't share this OTP with anyone.</p>
+</div>
+</body>
+</html>
